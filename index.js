@@ -1,3 +1,5 @@
+var size = require('element-size')
+
 module.exports = fit
 
 function fit(canvas) {
@@ -9,10 +11,11 @@ function fit(canvas) {
 
   function resize() {
     if (canvas.parentNode && canvas.parentNode !== document.body) {
-      var width = canvas.parentNode.clientWidth|0
-      var height = canvas.parentNode.clientHeight|0
+      var psize  = size(canvas.parentNode)
+      var width  = psize[0]|0
+      var height = psize[1]|0
     } else {
-      var width = window.innerWidth
+      var width  = window.innerWidth
       var height = window.innerHeight
     }
 
