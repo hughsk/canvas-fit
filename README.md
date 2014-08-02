@@ -1,4 +1,4 @@
-# canvas-fit [![experimental](http://badges.github.io/stability-badges/dist/experimental.svg)](http://github.com/badges/stability-badges)
+# canvas-fit [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
 Small module for fitting a canvas element within the bounds of its parent.
 Useful, for example, for making a canvas fill the screen. Works with SVG
