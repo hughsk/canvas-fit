@@ -8,7 +8,7 @@ elements too!
 
 [![NPM](https://nodei.co/npm/canvas-fit.png)](https://nodei.co/npm/canvas-fit/)
 
-### resize = fit(canvas[, parent])
+### resize = fit(canvas[, parent[, scale]])
 
 Creates a `resize` function for your `canvas` element. Calling this function
 will resize the canvas to fit its parent element.
@@ -32,6 +32,11 @@ window.addEventListener('resize'
   , false
 )
 ```
+
+You can also set the scale of the canvas element relative to its styled size
+on the page using the `scale` argument – for example, passing in
+`window.devicePixelRatio` here will scale the canvas resolution up on retina
+displays.
 
 ## License
 

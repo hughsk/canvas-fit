@@ -2,10 +2,12 @@ var size = require('element-size')
 
 module.exports = fit
 
-function fit(canvas, parent) {
+function fit(canvas, parent, scale) {
   canvas.style.position = canvas.style.position || 'absolute'
   canvas.style.top = 0
   canvas.style.left = 0
+
+  scale = parseFloat(scale || 1)
 
   return resize()
 
@@ -20,8 +22,8 @@ function fit(canvas, parent) {
       var height = window.innerHeight
     }
 
-    canvas.width = width
-    canvas.height = height
+    canvas.width = width * scale
+    canvas.height = height * scale
     canvas.style.width = width + 'px'
     canvas.style.height = height + 'px'
 
