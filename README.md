@@ -38,6 +38,16 @@ on the page using the `scale` argument – for example, passing in
 `window.devicePixelRatio` here will scale the canvas resolution up on retina
 displays.
 
+### `resize.scale = <Number>`
+
+Dynamically change the canvas' target `scale`. Note that you still need to
+manually trigger a resize after doing this.
+
+### `resize.parent = <DOMElement>`
+
+Dynamically change the canvas' `parent` element. Note that you still need
+to manually trigger a resize after doing this.
+
 ## License
 
 MIT. See [LICENSE.md](http://github.com/hughsk/canvas-fit/blob/master/LICENSE.md) for details.

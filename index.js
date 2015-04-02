@@ -7,12 +7,13 @@ function fit(canvas, parent, scale) {
   canvas.style.top = 0
   canvas.style.left = 0
 
-  scale = parseFloat(scale || 1)
+  resize.scale  = parseFloat(scale || 1)
+  resize.parent = parent
 
   return resize()
 
   function resize() {
-    var p = parent || canvas.parentNode
+    var p = resize.parent || canvas.parentNode
     if (p && p !== document.body) {
       var psize  = size(p)
       var width  = psize[0]|0
@@ -22,8 +23,8 @@ function fit(canvas, parent, scale) {
       var height = window.innerHeight
     }
 
-    canvas.width = width * scale
-    canvas.height = height * scale
+    canvas.width = width * resize.scale
+    canvas.height = height * resize.scale
     canvas.style.width = width + 'px'
     canvas.style.height = height + 'px'
 
