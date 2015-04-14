@@ -1,6 +1,6 @@
 {
   "name": "canvas-fit",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Small module for fitting a canvas element within the bounds of its parent.",
   "main": "index.js",
   "scripts": {
