@@ -38,15 +38,29 @@ on the page using the `scale` argument – for example, passing in
 `window.devicePixelRatio` here will scale the canvas resolution up on retina
 displays.
 
+
 ### `resize.scale = <Number>`
 
 Dynamically change the canvas' target `scale`. Note that you still need to
 manually trigger a resize after doing this.
 
+
 ### `resize.parent = <DOMElement>`
 
 Dynamically change the canvas' `parent` element. Note that you still need
 to manually trigger a resize after doing this.
+
+### `resize.parent = () => [width, height]`
+
+Instead of filling a given element, explicitly set the width and height
+of the canvas. Note that this value will still be scaled up according
+to `resize.scale`
+
+``` javascript
+resize.parent = function() {
+  return [ window.innerWidth - 300, window.innerHeight ]
+}
+```
 
 ## License
 

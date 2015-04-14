@@ -2,6 +2,8 @@ var size = require('element-size')
 
 module.exports = fit
 
+var scratch = new Float32Array(2)
+
 function fit(canvas, parent, scale) {
   canvas.style.position = canvas.style.position || 'absolute'
   canvas.style.top = 0
@@ -14,6 +16,11 @@ function fit(canvas, parent, scale) {
 
   function resize() {
     var p = resize.parent || canvas.parentNode
+    if (typeof p === 'function') {
+      var dims   = p(scratch) || scratch
+      var width  = dims[0]
+      var height = dims[1]
+    } else
     if (p && p !== document.body) {
       var psize  = size(p)
       var width  = psize[0]|0
