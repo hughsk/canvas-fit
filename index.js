@@ -5,6 +5,8 @@ module.exports = fit
 var scratch = new Float32Array(2)
 
 function fit(canvas, parent, scale) {
+  var isSVG = canvas.nodeName.toUpperCase() === 'SVG'
+
   canvas.style.position = canvas.style.position || 'absolute'
   canvas.style.top = 0
   canvas.style.left = 0
@@ -30,8 +32,14 @@ function fit(canvas, parent, scale) {
       var height = window.innerHeight
     }
 
-    canvas.width = width * resize.scale
-    canvas.height = height * resize.scale
+    if (isSVG) {
+      canvas.setAttribute('width', width * resize.scale + 'px')
+      canvas.setAttribute('height', height * resize.scale + 'px')
+    } else {
+      canvas.width = width * resize.scale
+      canvas.height = height * resize.scale
+    }
+
     canvas.style.width = width + 'px'
     canvas.style.height = height + 'px'
 
