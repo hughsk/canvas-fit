@@ -28,8 +28,9 @@ function fit(canvas, parent, scale) {
       var width  = psize[0]|0
       var height = psize[1]|0
     } else {
-      var width  = window.innerWidth
-      var height = window.innerHeight
+      var element = document.documentElement
+      var width  = element.clientWidth
+      var height = element.clientHeight
     }
 
     if (isSVG) {
